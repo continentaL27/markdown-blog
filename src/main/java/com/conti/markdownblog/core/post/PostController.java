@@ -26,8 +26,9 @@ public class PostController {
 
     private final static int PAGINATION_SIZE = 3;
 
+    @GetMapping("")
     public String getPaginatePosts(
-            @RequestParam(value = "page", defaultValue = "1") int page,
+            @RequestParam(value = "page", defaultValue = "0") int page,
             @RequestParam(value = "size", defaultValue = "" + PAGINATION_SIZE) int size,
             Model model) {
 
@@ -47,7 +48,7 @@ public class PostController {
         return "posts";
     }
 
-    @GetMapping("/id")
+    @GetMapping("/{id}")
     public String getPostById(@PathVariable long id, Model model) {
 
         Optional<Post> postOptional = postRepository.findById(id);

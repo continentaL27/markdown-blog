@@ -30,11 +30,12 @@ public class ContextEventListener implements ApplicationListener<ContextRefreshe
     @Autowired
     private PostRepository postRepository;
 
-    @Value("classpath:posts/")
+    @Value("classpath*:posts/*.md")
     private Resource[] postFiles;
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
+
         Arrays.stream(postFiles).forEach(postFile -> {
             Optional<String> postFileNameOpt = Optional.ofNullable(postFile.getFilename());
             Post post = new Post();
