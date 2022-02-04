@@ -61,6 +61,13 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+<!--		library for parsing markdown and rendering to HTML-->
+		<dependency>
+			<groupId>com.atlassian.commonmark</groupId>
+			<artifactId>commonmark</artifactId>
+			<version>0.17.0</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
