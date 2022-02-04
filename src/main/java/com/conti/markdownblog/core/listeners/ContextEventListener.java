@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.core.io.Resource;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -20,6 +21,7 @@ import static com.conti.markdownblog.core.markdown.MdFileReader.*;
 import static com.conti.markdownblog.core.post.util.PostUtil.getHtmlContentFromMdLines;
 import static com.conti.markdownblog.core.post.util.PostUtil.getSynopsisFromHtmlContent;
 
+@Component
 public class ContextEventListener implements ApplicationListener<ContextRefreshedEvent> {
 
     @Autowired
